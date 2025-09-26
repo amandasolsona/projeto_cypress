@@ -1,0 +1,17 @@
+
+{
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "Projeto Cypress para testes automatizados no site Sauce Demo",
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open",
+    "report": "npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  },
+  "devDependencies": {
+    "cypress": "^12.8.0"
+  }
+}
