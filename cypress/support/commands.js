@@ -1,8 +1,7 @@
 
 // Custom commands example
-Cypress.Commands.add('login', (username, password) => {
-  cy.visit('/');
-  cy.get('#user-name').type(username);
-  cy.get('#password').type(password);
-  cy.get('#login-button').click();
+Cypress.Commands.add('login', (email, password) => {
+  cy.get('[data-qa="login-email"]').type(email);
+  cy.get('[data-qa="login-password"]').type(password);
+  cy.get('[data-qa="login-button"]').click();
 });

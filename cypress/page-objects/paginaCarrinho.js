@@ -4,15 +4,28 @@ export class PaginaCarrinho {
     cy.get('.shopping_cart_link').click();
   }
 
-  validarItemDoCarrinho(itemName) {
-    cy.contains('.cart_item', itemName).should('be.visible');
+  adicionarItemCarrinho(itemName) {
+    
+   cy.contains('div.single-products',itemName)
+  .find('.productinfo > .btn')
+  .click();
+
   }
 
-  validarCarrinhoVazio() {
-    cy.get('.cart_item').should('not.exist');
+  validarMensagemAoAdiconarProduto(mensagem){
+    cy.get(".modal-content").contains(mensagem)
   }
 
-  irParaCheckout() {
-    cy.get('[data-test="checkout"]').click();
+
+  removerProdutoCarrinho(){
+    cy.get('.cart_quantity_delete').should('be.visible').click()
   }
+
+
+  validarProdutoRemovido(){
+    cy.get("#empty_cart").contains("Cart is empty! Click here to buy products.")
+  }
+
+
+
 }
